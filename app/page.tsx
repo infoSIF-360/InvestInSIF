@@ -48,11 +48,11 @@ export default function InvestInSIFLanding() {
             className={`text-center max-w-5xl mx-auto transition-all duration-1000 ${isVisible ? "animate-fade-in" : "opacity-0"}`}
           >
             <Badge className="mb-8 bg-primary/20 text-primary border-primary/30 text-sm px-4 py-2">
-              🚀 New Platform for Specialized Investment Funds
+              🚀 India's First Platform for Investing in Specialized Investment Funds
             </Badge>
             <div className="space-y-4 mb-8">
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                <span className="block">Discover & Compare</span>
+                <span className="block">Discover,Compare & Invest in</span>
                 <span className="block gradient-text">Specialized Investment Funds</span>
                 <span className="block text-3xl md:text-5xl lg:text-6xl">(SIFs)</span>
               </h1>
@@ -87,7 +87,7 @@ export default function InvestInSIFLanding() {
                     <div>
                       <h4 className="font-semibold mb-1">Minimum Investment</h4>
                       <p className="text-muted-foreground">
-                        ₹10 crore minimum investment for institutional and HNI investors
+                        ₹10 Lakhs minimum investment for institutional and HNI investors
                       </p>
                     </div>
                   </div>
@@ -148,7 +148,7 @@ export default function InvestInSIFLanding() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Why Choose InvestInSIF?</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              The only platform you need to discover, compare, and access Specialized Investment Funds
+              The only platform you need to discover, compare, and invest in Specialized Investment Funds
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
