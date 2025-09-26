@@ -2,13 +2,12 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import { notFound } from "next/navigation"
-import { funds } from "../fundsData" // adjust path if you put fundsData elsewhere
+import { funds } from "../fundsData"
 
 type Props = {
   params: { slug: string }
 }
 
-// dynamic metadata for each fund
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const fund = funds.find((f) => f.slug === params.slug)
   if (!fund) {
@@ -31,7 +30,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-// tell Next which slugs to prerender at build time
 export async function generateStaticParams() {
   return funds.map((f) => ({ slug: f.slug }))
 }
@@ -42,7 +40,7 @@ export default function FundPage({ params }: Props) {
 
   return (
     <section className="container mx-auto px-6 py-16">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-3xl mx-auto">
         <div className="flex items-center gap-4 mb-6">
           {fund.logo && (
             <div className="w-20 h-20 relative rounded-lg overflow-hidden">
@@ -72,20 +70,11 @@ export default function FundPage({ params }: Props) {
           </div>
         </div>
 
-        {/* CTA / Links */}
         <div className="flex gap-3">
-          <a
-            href="/sifmarketplace"
-            className="inline-block px-5 py-3 rounded-full bg-primary text-white font-semibold hover:bg-primary/90"
-          >
+          <a href="/sifmarketplace" className="inline-block px-5 py-3 rounded-full bg-primary text-white font-semibold hover:bg-primary/90">
             ← Back to Marketplace
           </a>
-
-          {/* Example: lead capture / invest CTA */}
-          <a
-            href="#insiderForm"
-            className="inline-block px-5 py-3 rounded-full border border-primary text-primary hover:bg-primary/5"
-          >
+          <a href="#insiderForm" className="inline-block px-5 py-3 rounded-full border border-primary text-primary hover:bg-primary/5">
             Request Info
           </a>
         </div>
