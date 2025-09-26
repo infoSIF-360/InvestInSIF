@@ -1,23 +1,22 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Building2, Star, TrendingUp } from "lucide-react";
 
 export default function MarketSection() {
   const funds = [
     {
-      name: "Edelweiss Altiva SIF",
-      desc: "Hybrid Long-Short",
+      fundName: "ALTIVA HYBRID LONG-SHORT FUND",
+      amc: "EDELWEISS MUTUAL FUNDS",
+      desc: "A hybrid fund focusing on long-short equity strategies for optimal returns.",
       link: "https://www.edelweissmf.com/altivasif",
-      icon: <Star className="h-6 w-6 text-accent" />,
-      color: "from-primary to-accent",
+      color: "from-yellow-200 to-yellow-400",
     },
     {
-      name: "Quant AMC QSIF",
-      desc: "Equity Long Short",
+      fundName: "QSIF EQUITY LONG-SHORT FUND",
+      amc: "QUANT AMC",
+      desc: "An equity long-short strategy fund designed for aggressive investors.",
       link: "https://www.qsif.com/",
-      icon: <TrendingUp className="h-6 w-6 text-success" />,
-      color: "from-success to-accent",
+      color: "from-green-200 to-green-400",
     },
   ];
 
@@ -27,29 +26,37 @@ export default function MarketSection() {
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
           Explore SIFs in the Market
         </h2>
+
         <div className="grid md:grid-cols-2 gap-12">
           {funds.map((fund, i) => (
             <div
               key={i}
-              className="relative overflow-hidden rounded-3xl bg-card shadow-lg hover:shadow-2xl transition-shadow duration-300 group"
+              className="relative overflow-hidden rounded-3xl bg-card shadow-xl hover:shadow-2xl transition-all duration-500 group p-10 flex flex-col justify-between"
             >
               {/* Gradient Accent */}
               <div
-                className={`absolute -top-16 -left-16 w-72 h-72 rounded-full bg-gradient-to-br ${fund.color} opacity-20 blur-3xl group-hover:opacity-30 transition-all duration-500`}
+                className={`absolute -top-20 -left-20 w-80 h-80 rounded-full bg-gradient-to-br ${fund.color} opacity-20 blur-3xl group-hover:opacity-30 transition-all duration-500`}
               />
-              <div className="p-10 relative z-10 flex flex-col h-full justify-between">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
-                    {fund.icon}
-                  </div>
-                  <h3 className="text-2xl font-bold">{fund.name}</h3>
+
+              {/* Card Content */}
+              <div className="relative z-10 flex flex-col h-full justify-between">
+                <div className="mb-6">
+                  <h3 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-2">
+                    {fund.fundName}
+                  </h3>
+                  <p className="text-sm text-muted-foreground mb-4 font-medium">
+                    {fund.amc}
+                  </p>
+                  <p className="text-muted-foreground">{fund.desc}</p>
                 </div>
-                <p className="text-muted-foreground mb-6">{fund.desc}</p>
+
                 <Button
                   asChild
-                  className="mt-auto bg-primary hover:bg-primary/90 text-lg py-4 rounded-full shadow-lg transition-transform hover:scale-105"
+                  className="mt-4 bg-primary hover:bg-primary/90 text-sm px-6 py-2 rounded-full shadow-md w-max transition-transform hover:scale-105"
                 >
-                  <a href={fund.link}>View Details</a>
+                  <a href={fund.link} target="_blank" rel="noopener noreferrer">
+                    Learn More
+                  </a>
                 </Button>
               </div>
             </div>

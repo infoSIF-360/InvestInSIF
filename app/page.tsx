@@ -1,6 +1,5 @@
 "use client"
 
-import Navbar from "@/components/Navbar"
 import Hero from "@/components/Hero"
 import SifExplainer from "@/components/SifExplainer"
 import FeaturesSection from "@/components/FeaturesSection"
@@ -22,15 +21,16 @@ import {
   Star,
   Building2,
 } from "lucide-react"
+import InsiderForm from "./insider/page"
 
 export default function Page() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Navbar />
       <Hero />
       <SifExplainer />
       <FeaturesSection />
       <MarketSection />
+      <InsiderForm />
       <BlogSection />
       <Footer />
     </div>

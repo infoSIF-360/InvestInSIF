@@ -23,17 +23,36 @@ export default function BlogSection() {
   ]
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-24 bg-background">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12">Latest Articles & Insights</h2>
-        <div className="grid md:grid-cols-3 gap-8">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">
+          Latest Articles & Insights
+        </h2>
+
+        <div className="grid md:grid-cols-3 gap-10">
           {posts.map((post, i) => (
-            <div key={i} className="p-6 bg-card rounded-2xl shadow hover:shadow-lg transition-shadow">
-              <h3 className="text-xl font-semibold mb-2">{post.title}</h3>
-              <p className="text-muted-foreground mb-4">{post.desc}</p>
-              <Button variant="ghost" className="p-0" asChild>
-                <a href={post.link} className="flex items-center text-primary hover:underline">
-                  Read More <ArrowRight className="h-4 w-4 ml-1" />
+            <div
+              key={i}
+              className="flex flex-col justify-between p-8 bg-card rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 border border-border"
+            >
+              {/* Card Header */}
+              <div className="mb-6">
+                <h3 className="text-2xl font-extrabold mb-3 line-clamp-2">
+                  {post.title}
+                </h3>
+                <p className="text-muted-foreground text-sm line-clamp-3">
+                  {post.desc}
+                </p>
+              </div>
+
+              {/* Read More */}
+              <Button
+                variant="outline"
+                className="self-start mt-auto text-sm px-6 py-2 rounded-full hover:bg-primary/10 transition-colors flex items-center gap-2"
+                asChild
+              >
+                <a href={post.link}>
+                  Read More <ArrowRight className="h-4 w-4" />
                 </a>
               </Button>
             </div>

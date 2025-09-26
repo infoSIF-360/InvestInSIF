@@ -22,8 +22,8 @@ export default function HeroSection() {
           }`}
         >
           {/* Badge */}
-          <Badge className="mb-6 bg-primary/15 text-primary border-primary/20 text-sm px-5 py-2 rounded-full tracking-wide">
-            🚀 Your Gateway to Specialized Investments
+          <Badge className="mb-6 bg-black-900 text-white border-primary/20 text-sm px-5 py-2 rounded-full tracking-wide">
+            Your Gateway to Specialized Investments
           </Badge>
 
           {/* Headline */}
